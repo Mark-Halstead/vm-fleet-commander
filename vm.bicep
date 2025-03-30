@@ -3,6 +3,7 @@ param location string
 param adminUsername string
 @secure()
 param adminPassword string
+param networkInterfaceId string
 
 resource vm 'Microsoft.Compute/virtualMachines@2022-08-01' = {
   name: vmName
@@ -30,12 +31,12 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-08-01' = {
         }
       }
     }
-    networkProfile: {
-      networkInterfaces: [
-        {
-          id: networkInterfaceId
-        }
-      ]
+networkProfile: {
+  networkInterfaces: [
+    {
+      id: networkInterfaceId
     }
+  ]
+}
   }
 }
