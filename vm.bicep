@@ -1,3 +1,12 @@
+// Module: vm.bicep
+// Purpose: Deploys a Windows Virtual Machine with configurable size, name, and admin credentials.
+// Parameters:
+// - vmName: Name of the virtual machine
+// - location: Azure region
+// - adminUsername: VM administrator username
+// - adminPassword: VM administrator password
+// - networkInterfaceId: ID of the NIC to attach
+
 param vmName string
 param location string
 param adminUsername string

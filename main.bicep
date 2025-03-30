@@ -5,6 +5,7 @@ var vmName = '${projectName}-vm01'
 var vnetName = '${projectName}-vnet'
 var nsgName = '${projectName}-nsg'
 var nicName = '${projectName}-nic'
+var pipName = '${projectName}-pip'
 
 module vnetMod './vnet.bicep' = {
   name: 'vnetDeploy'
@@ -29,6 +30,15 @@ module nicMod './nic.bicep' = {
     location: location
     subnetId: vnetMod.outputs.subnetId
     nsgId: nsgMod.outputs.nsgId
+    pipId: pipMod.outputs.pipId
+  }
+}
+
+module pipMod './pip.bicep' = {
+  name: 'pipDeploy'
+  params: {
+    pipName: pipName
+    location: location
   }
 }
 
