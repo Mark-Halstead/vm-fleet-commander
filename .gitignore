@@ -1,0 +1,5 @@
+*.log
+*.bak
+.vscode/
+*.tmp
+*.parameters.json
