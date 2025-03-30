@@ -33,7 +33,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2022-08-01' = {
     networkProfile: {
       networkInterfaces: [
         {
-          id: 'TO_BE_LINKED_LATER'
+          id: networkInterfaceId
         }
       ]
     }
